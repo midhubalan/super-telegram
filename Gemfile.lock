@@ -4,9 +4,11 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.3.0)
+    benchmark (0.4.1)
     declarative (0.0.20)
     digest-crc (0.7.0)
       rake (>= 12.0.0, < 14.0.0)
+    erubi (1.13.1)
     faraday (2.13.4)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -63,7 +65,10 @@ GEM
     mutex_m (0.3.0)
     net-http (0.6.0)
       uri
+    netrc (0.11.0)
     os (1.1.4)
+    parallel (1.27.0)
+    prism (1.4.0)
     public_suffix (6.0.2)
     rack (3.1.16)
     rack-protection (4.1.1)
@@ -74,11 +79,17 @@ GEM
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rake (13.3.0)
+    rbi (0.3.6)
+      prism (~> 1.0)
+      rbs (>= 3.4.4)
+    rbs (3.9.4)
+      logger
     representable (3.2.0)
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
     retriable (3.1.2)
+    rexml (3.4.1)
     ruby2_keywords (0.0.5)
     signet (0.20.0)
       addressable (~> 2.8)
@@ -92,18 +103,49 @@ GEM
       rack-protection (= 4.1.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
+    sorbet (0.5.12358)
+      sorbet-static (= 0.5.12358)
+    sorbet-runtime (0.5.12358)
+    sorbet-static (0.5.12358-x86_64-linux)
+    sorbet-static-and-runtime (0.5.12358)
+      sorbet (= 0.5.12358)
+      sorbet-runtime (= 0.5.12358)
+    spoom (1.6.3)
+      erubi (>= 1.10.0)
+      prism (>= 0.28.0)
+      rbi (>= 0.3.3)
+      rexml (>= 3.2.6)
+      sorbet-static-and-runtime (>= 0.5.10187)
+      thor (>= 0.19.2)
+    tapioca (0.16.11)
+      benchmark
+      bundler (>= 2.2.25)
+      netrc (>= 0.11.0)
+      parallel (>= 1.21.0)
+      rbi (~> 0.2)
+      sorbet-static-and-runtime (>= 0.5.11087)
+      spoom (>= 1.2.0)
+      thor (>= 1.2.0)
+      yard-sorbet
+    thor (1.4.0)
     tilt (2.6.1)
     trailblazer-option (0.1.2)
     uber (0.1.0)
     uri (1.0.3)
+    yard (0.9.37)
+    yard-sorbet (0.9.0)
+      sorbet-runtime
+      yard
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
   google-cloud-storage (~> 1.56)
   sinatra (~> 4.1)
+  sorbet (~> 0.5.12358)
+  sorbet-runtime (~> 0.5.12358)
+  tapioca (~> 0.16.11)
 
 BUNDLED WITH
    2.6.9
